@@ -53,6 +53,20 @@ Edge 12-  <br>
 <br>
 
 <h2>アップデート</h2>
+2024/05/09（3回目）
+<details>
+すべて：
+・問題のあるノード接続が試みられた場合に、これを拒否できていなかった問題を修正。
+</details>
+2024/05/09（2回目）
+<details>
+AnyLiterals:
+・入力可能な整数値の上限を撤廃（Number.MIN_SAFE_INTEGER~Number.MAX_SAFE_INTEGER）。<br>
+　すべてのシード値を扱えるようになり、AnyLiteralsとDynamicActionの連携次第でシード値を高度に管理することが可能になった。<br>
+・画面のリロード時、ワークフローの読み込み時にノードのサイズがリセットされる問題を修正。<br>
+DynamicAction:
+・AnyLiteralsで動的生成されたウィジェットの"値"(value)を変更する場合に、json_objやsilent_update...関数を触らなくても内部データが更新されるようにした。
+</details>
 2024/05/09
 <details>
 DynamicAction: <br>
@@ -65,16 +79,6 @@ AnyLiterals: <br>
 ・コンボボックスの選択肢が0個の状態でも正常に動作するように仕様変更（DynamicActionに不適切なコードを書いても取り返しのつかない変化が生まれないように）<br>
 ・jsonテキストの手動入力時、テキストが不正である旨のデバッグメッセージが正しく表示されていなかった問題を修正。<br>
 </details>
-2024/05/09（2回目）
-<details>
-AnyLiterals:
-・入力可能な整数値の上限を撤廃（Number.MIN_SAFE_INTEGER~Number.MAX_SAFE_INTEGER）。<br>
-　すべてのシード値を扱えるようになり、AnyLiteralsとDynamicActionの連携次第でシード値を高度に管理することが可能になった。<br>
-・画面のリロード時、ワークフローの読み込み時にノードのサイズがリセットされる問題を修正。<br>
-DynamicAction:
-・AnyLiteralsで動的生成されたウィジェットの"値"(value)を変更する場合に、json_objやsilent_update...関数を触らなくても内部データが更新されるようにした。
-</details>
-
 <h2>各ノードの説明</h2>
 マークダウン記法もよく知らないため、かなり残念なレイアウトになっていますがご容赦ください。<br>
 なお、png画像にはワークフローが埋め込まれています。<br>
