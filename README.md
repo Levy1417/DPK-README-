@@ -59,16 +59,19 @@ DynamicAction: <br>
 ・スタートアップ時に一回だけ処理を行うことができるようになりました。（update on...でon Startup Onlyを選択してください。）<br>
 AnyLiterals: <br>
 ・SetNodeStatesとの連携時にノードを削除できない問題を修正。<br>
-・DynamicActionで値を制御する場合に備えて、json_objプロパティとsilent_update_json_widget関数を外部からアクセスできるように変更<br>
-　このノードで動的生成されたウィジェットの値を変更する場合は、json_objの値も同時に更新したあと、silent_update_...関数でjsonウィジェットの文字列に反映するようにしてください。<br>
+・DynamicActionで設定を制御する場合に備えて、json_objプロパティとsilent_update_json_widget関数を外部からアクセスできるように変更<br>
+　このノードで動的生成されたウィジェットの設定(options)を変更する場合は、json_objの値も同時に更新したあと、silent_update_...関数でjsonウィジェットの文字列に反映するようにしてください。<br>
 　json_objの中身については、AnyLiterals＞詳細＞jsonウィジェットについて＞「データは以下のような構成になっています。（分かる人向け）」の項に記載してあります。<br>
 ・コンボボックスの選択肢が0個の状態でも正常に動作するように仕様変更（DynamicActionに不適切なコードを書いても取り返しのつかない変化が生まれないように）<br>
 ・jsonテキストの手動入力時、テキストが不正である旨のデバッグメッセージが正しく表示されていなかった問題を修正。<br>
 </details>
 2024/05/09（2回目）
 <details>
-・AnyLiteralsで入力可能な整数値の上限を撤廃（Number.MIN_SAFE_INTEGER~Number.MAX_SAFE_INTEGER）。
-　すべてのシード値を扱えるようになり、AnyLiteralsとDynamicActionの連携次第でシード値を高度に管理することが可能になった。
+AnyLiterals:
+・入力可能な整数値の上限を撤廃（Number.MIN_SAFE_INTEGER~Number.MAX_SAFE_INTEGER）。<br>
+　すべてのシード値を扱えるようになり、AnyLiteralsとDynamicActionの連携次第でシード値を高度に管理することが可能になった。<br>
+DynamicAction:
+・AnyLiteralsで動的生成されたウィジェットの"値"(value)を変更する場合に、json_objやsilent_update...関数を触らなくても内部データが更新されるようにした。
 </details>
 
 <h2>各ノードの説明</h2>
