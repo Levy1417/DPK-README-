@@ -70,6 +70,7 @@ AnyLiterals: <br>
 AnyLiterals:
 ・入力可能な整数値の上限を撤廃（Number.MIN_SAFE_INTEGER~Number.MAX_SAFE_INTEGER）。<br>
 　すべてのシード値を扱えるようになり、AnyLiteralsとDynamicActionの連携次第でシード値を高度に管理することが可能になった。<br>
+・画面のリロード時、ワークフローの読み込み時にノードのサイズがリセットされる問題を修正。<br>
 DynamicAction:
 ・AnyLiteralsで動的生成されたウィジェットの"値"(value)を変更する場合に、json_objやsilent_update...関数を触らなくても内部データが更新されるようにした。
 </details>
