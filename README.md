@@ -53,6 +53,10 @@ Edge 12-  <br>
 <br>
 
 <h2>アップデート</h2>
+2024/05/10（3回目）<br>
+DynamicAction:<br>
+・＜実験的＞AutoQueue機能有効時もonQueuePrompt（ワークフロー開始直前）を条件とするイベントが動作するようになりました。<br>
+　　　　　　ただし、現時点では、1秒以下で処理が完了するワークフローでは動作しません。
 2024/05/10（2回目）<br>
 AnyEval/ExtractArray/AnyLiterals:<br>
 ・直接の接続先がAnything Everywhere?（in cg-use-everywhere）ノードであり、かつノードが不適切な順番でロードされた（*）場合に、<br>
@@ -78,7 +82,7 @@ AnyLiterals:<br>
 　すべてのシード値を扱えるようになり、AnyLiteralsとDynamicActionの連携次第でシード値を高度に管理することが可能になった。<br>
 ・画面のリロード時、ワークフローの読み込み時にノードのサイズがリセットされる問題を修正。<br>
 DynamicAction:<br>
-・AnyLiteralsで動的生成されたウィジェットの"値"(value)を変更する場合に、json_objやsilent_update...関数を触らなくても内部データが更新されるようにした。<br>
+・AnyLiteralsで動的生成されたウィジェットの"値"(value)を変更する場合に、json_objやsilent_update...関数を触らなくても内部データが更新されるようにしました。<br>
 </details>
 2024/05/09
 <details>
@@ -92,6 +96,7 @@ AnyLiterals: <br>
 ・コンボボックスの選択肢が0個の状態でも正常に動作するように仕様変更（DynamicActionに不適切なコードを書いても取り返しのつかない変化が生まれないように）<br>
 ・jsonテキストの手動入力時、テキストが不正である旨のデバッグメッセージが正しく表示されていなかった問題を修正。<br>
 </details>
+
 <h2>各ノードの説明</h2>
 マークダウン記法もよく知らないため、かなり残念なレイアウトになっていますがご容赦ください。<br>
 なお、png画像にはワークフローが埋め込まれています。<br>
@@ -510,6 +515,10 @@ AnyLiterals: <br>
   <tr>
    <td>on Execute</td>
    <td>フローの中でノードの処理が実際に行われる時にアクションを実行します。</td>
+  </tr>
+  <tr>
+   <td>on Startup Only</td>
+   <td>ワークフローの読み込み時に一回だけアクションを実行します。</td>
   </tr>
  </table>
 ・src node idsでは、条件部やアクションのコード内で参照する各ノードのIDを指定します。<br>
