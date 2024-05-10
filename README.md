@@ -53,10 +53,10 @@ Edge 12-  <br>
 <br>
 
 <h2>アップデート</h2>
-2024/05/10（3回目）<br>
+2024/05/10（3,4回目）<br>
 DynamicAction:<br>
-・＜実験的＞AutoQueue機能有効時もonQueuePrompt（ワークフロー開始直前）を条件とするイベントが動作するようになりました。<br>
-　　　　　　ただし、現時点では、1秒以下で処理が完了するワークフローでは動作しません。
+・（実験的）Batch Count > 1, Batch Size > 1, autoQueue機能有効時にonQueuePromptイベントがおおむね(*)適切にトリガーされるようになりました。<br>
+　* autoQueue有効時、2回目の生成時のみonQueuePromptイベントが本来の二倍の回数呼び出されることがあります。原因を調査中です。
 2024/05/10（2回目）<br>
 AnyEval/ExtractArray/AnyLiterals:<br>
 ・直接の接続先がAnything Everywhere?（in cg-use-everywhere）ノードであり、かつノードが不適切な順番でロードされた（*）場合に、<br>
